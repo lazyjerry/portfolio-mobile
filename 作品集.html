@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>林書賢 - 作品集</title>
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<!-- Font Awesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		/>
+		<!-- Custom CSS -->
+		<style>
+			body {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				font-family: "Helvetica Neue", "Helvetica", "Arial", "Microsoft JhengHei", sans-serif;
+				min-height: 100vh;
+				padding: 20px 0;
+			}
+			.portfolio-container {
+				background: rgba(255, 255, 255, 0.95);
+				backdrop-filter: blur(10px);
+				border-radius: 20px;
+				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+				margin: 10px auto;
+				padding: 20px;
+				max-width: 1200px;
+				border: 1px solid rgba(255, 255, 255, 0.2);
+			}
+			.profile-img {
+				border-radius: 20px;
+				width: 100%;
+				max-width: 280px;
+				height: auto;
+				box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+				transition: transform 0.3s ease;
+			}
+			.profile-img:hover {
+				transform: translateY(-5px);
+			}
+			.item-bullet {
+				background: linear-gradient(45deg, #007bff, #0056b3);
+				border-radius: 50%;
+				width: 16px;
+				height: 16px;
+				margin-top: 8px;
+				box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+			}
+			.section-title {
+				color: #2c3e50;
+				border-bottom: 3px solid #007bff;
+				padding-bottom: 15px;
+				margin-bottom: 40px;
+				position: relative;
+				font-weight: 600;
+			}
+			.section-title::after {
+				content: '';
+				position: absolute;
+				bottom: -3px;
+				left: 0;
+				width: 60px;
+				height: 3px;
+				background: linear-gradient(45deg, #007bff, #0056b3);
+				border-radius: 2px;
+			}
+			.skill-item {
+				background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+				border-radius: 25px;
+				padding: 8px 16px;
+				margin: 4px 8px 4px 0;
+				display: inline-block;
+				border: 1px solid rgba(0, 123, 255, 0.1);
+				transition: all 0.3s ease;
+			}
+			.skill-item:hover {
+				background: linear-gradient(45deg, #007bff, #0056b3);
+				color: white;
+				transform: translateY(-2px);
+				box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+			}
+			.skill-card {
+				background: rgba(255, 255, 255, 0.9);
+				border-radius: 15px;
+				padding: 16px;
+				border: 1px solid rgba(0, 123, 255, 0.1);
+				transition: all 0.3s ease;
+				box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+				backdrop-filter: blur(5px);
+			}
+			.skill-card:hover {
+				transform: translateY(-3px);
+				box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+				border-color: rgba(0, 123, 255, 0.3);
+			}
+			.skill-card-title {
+				color: #2c3e50;
+				margin-bottom: 12px;
+				font-weight: 600;
+				border-bottom: 2px solid #007bff;
+				padding-bottom: 6px;
+				font-size: 0.9rem;
+			}
+			.skill-items {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 6px;
+			}
+			.skill-card .skill-item {
+				font-size: 0.8rem;
+				padding: 6px 12px;
+				margin: 2px 4px 2px 0;
+			}
+			.project-card {
+				background: rgba(255, 255, 255, 0.9);
+				border-radius: 15px;
+				padding: 25px;
+				margin-bottom: 25px;
+				border-left: 5px solid #007bff;
+				transition: all 0.3s ease;
+				box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+			}
+			.project-card:hover {
+				transform: translateY(-3px);
+				box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+				border-left-color: #0056b3;
+			}
+			.project-title {
+				color: #000000;
+				margin-bottom: 10px;
+				font-weight: 600;
+				display: inline-block;
+				margin-right: 20px;
+			}
+			.project-date {
+				color: #000000;
+				font-weight: 500;
+				display: inline-block;
+			}
+			.project-links a {
+				color: #007bff;
+				text-decoration: none;
+				border-radius: 15px;
+				transition: all 0.3s ease;
+				border: 1px solid transparent;
+			}
+			.project-links a:hover {
+				background: #007bff;
+				color: white;
+				border-color: #007bff;
+			}
+			.project-toggle {
+				background: linear-gradient(45deg, #007bff, #0056b3);
+				color: white;
+				border: none;
+				padding: 8px 16px;
+				border-radius: 20px;
+				cursor: pointer;
+				font-size: 0.9rem;
+				margin-bottom: 15px;
+				transition: all 0.3s ease;
+				display: inline-flex;
+				align-items: center;
+				gap: 8px;
+			}
+			.project-toggle:hover {
+				transform: translateY(-1px);
+				box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+			}
+			.project-toggle i {
+				transition: transform 0.3s ease;
+			}
+			.project-toggle.expanded i {
+				transform: rotate(180deg);
+			}
+			.project-content {
+				max-height: 0;
+				overflow: hidden;
+				transition: max-height 0.3s ease;
+			}
+			.project-content.expanded {
+				max-height: none;
+			}
+			h1 {
+				color: #2c3e50;
+				font-weight: 700;
+				margin-bottom: 15px;
+			}
+			.lead {
+				color: #5a6c7d;
+				font-size: 1.1rem;
+			}
+			ul li {
+				margin-bottom: 8px;
+				color: #495057;
+			}
+			.container-fluid {
+				padding: 0 15px;
+			}
+			@keyframes fadeInUp {
+				from {
+					opacity: 0;
+					transform: translateY(30px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+			.portfolio-container {
+				animation: fadeInUp 0.8s ease-out;
+			}
+			.project-card {
+				animation: fadeInUp 0.6s ease-out;
+				animation-fill-mode: both;
+			}
+			.project-card:nth-child(1) { animation-delay: 0.1s; }
+			.project-card:nth-child(2) { animation-delay: 0.2s; }
+			.project-card:nth-child(3) { animation-delay: 0.3s; }
+			.project-card:nth-child(4) { animation-delay: 0.4s; }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="portfolio-container">
+				<!-- 頁面標題區域 -->
+				<div class="text-center mb-5">
+					<h1 class="display-4 fw-bold text-primary mb-2">林書賢 - 專案作品集</h1>
+					<p class="lead text-muted">軟體開發工程師 | 全端開發 | 專案管理</p>
+					<div class="d-inline-block bg-primary" style="height: 3px; width: 60px; border-radius: 2px;"></div>
+				</div>
+				
+				<div class="row">
+					<div
+						class="col-sm-12"
+						data-enable-grammarly="false"
+					>
+						<h1 class="mb-3">
+							<b>林書賢</b>
+							<small class="text-muted">Jerry Lin</small>
+						</h1>
+						<p class="lead">
+							目前掌握與常用的技能、工具以及服務：
+						</p>
+
+						<div class="skills-container mb-4">
+							<div class="row g-3">
+								<div class="col-lg-4 col-md-6">
+									<div class="skill-card h-100">
+										<h6 class="skill-card-title"><i class="fas fa-server text-primary me-2"></i>系統與基礎設施</h6>
+										<div class="skill-items">
+											<span class="skill-item">Debian</span>
+											<span class="skill-item">CentOS 7</span>
+											<span class="skill-item">Nginx</span>
+											<span class="skill-item">MariaDB</span>
+											<span class="skill-item">Bootstrap</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-6">
+									<div class="skill-card h-100">
+										<h6 class="skill-card-title"><i class="fab fa-php text-primary me-2"></i>PHP 開發</h6>
+										<div class="skill-items">
+											<span class="skill-item">WordPress</span>
+											<span class="skill-item">CodeIgniter 3, 4</span>
+											<span class="skill-item">Laravel</span>
+											<span class="skill-item">ThinkPHP</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-6">
+									<div class="skill-card h-100">
+										<h6 class="skill-card-title"><i class="fab fa-python text-primary me-2"></i>Python 開發</h6>
+										<div class="skill-items">
+											<span class="skill-item">Flask</span>
+                      <span class="skill-item">爬蟲應用</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-6">
+									<div class="skill-card h-100">
+										<h6 class="skill-card-title"><i class="fas fa-mobile-alt text-primary me-2"></i>行動應用開發</h6>
+										<div class="skill-items">
+											<span class="skill-item">iOS - Swift</span>
+											<span class="skill-item">iOS - Objective-C</span>
+											<span class="skill-item">Android - Java</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-6">
+									<div class="skill-card h-100">
+										<h6 class="skill-card-title"><i class="fas fa-robot text-primary me-2"></i>AI 與現代開發</h6>
+										<div class="skill-items">
+											<span class="skill-item">TypeScript</span>
+											<span class="skill-item">Hono framework</span>
+											<span class="skill-item">Python</span>
+											<span class="skill-item">PHP</span>
+											<span class="skill-item">Bash</span>
+											<span class="skill-item">SQL</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-6">
+									<div class="skill-card h-100">
+										<h6 class="skill-card-title"><i class="fas fa-cloud text-primary me-2"></i>雲端服務</h6>
+										<div class="skill-items">
+											<span class="skill-item">Linode</span>
+											<span class="skill-item">Vultr</span>
+											<span class="skill-item">AWS</span>
+											<span class="skill-item">阿里雲</span>
+											<span class="skill-item">Azure</span>
+											<span class="skill-item">Cloudflare</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 專案與計畫區塊 -->
+				<div class="col-12 mt-5">
+					<div class="row">
+						<div class="col-12" data-enable-grammarly="false">
+							<h1 class="section-title" id="projects">
+								<b>專案與計畫</b>
+							</h1>
+						</div>
+					</div>
+					
+					<!-- 中原大學項目 -->
+					<div class="project-card">
+						<div class="mb-3">
+							<h3 class="project-title">
+								<b>中原大學 電子系 通訊組</b>
+							</h3>
+							<span class="project-date">2011年 7 月 - 2013 年 7 月</span>
+						</div>
+						<div class="mb-3">在兩年的研究所時期，專案主要以與研究室老師分配的專案項目為主：</div>
+						<button class="project-toggle" onclick="toggleProject(this)">
+							<span>查看詳細資訊</span>
+							<i class="fas fa-chevron-down"></i>
+						</button>
+						<div class="project-links project-content">
+							<ul class="list-unstyled">
+								<li>ACM Assets Conference 2012 Student Research Competition</li>
+								<ul>
+									<li>
+										<a href="http://assets12.sigaccess.org/accepted_src.html" target="_blank" rel="nofollow noopener" data-linkz-ai="">DETECTING HUNCHBACK BEHAVIOR IN AUTISTIC CHILDREN WITH SMART PHONE ASSISTIVE DEVICES</a>
+									</li>
+									<li>
+										<a href="https://www.youtube.com/watch?v=9qm8H-kbSPE" target="_blank" rel="nofollow noopener" data-linkz-ai="">Demo Video</a>
+									</li>
+								</ul>
+								<li>研究室 合作開發 Android APP</li>
+								<ul>
+									<li>
+										<a href="http://ppt.cc/7zij" target="_blank" rel="nofollow noopener" data-linkz-ai="">Money Care</a>
+									</li>
+								</ul>
+								<li>研究室合作開發 離線英文字典、<a href="https://www.youtube.com/watch?v=r-ABHPnOglI" target="_blank" rel="nofollow noopener" data-linkz-ai="">車道偵測系統</a></li>
+								<li>Google Play 上架 小型工具 APP</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- 邊境數位科技項目 -->
+					<div class="project-card">
+						<div class="mb-3">
+							<h3 class="project-title">
+								<b>邊境數位科技</b>
+							</h3>
+							<span class="project-date">2013 年 7 月 - 2016 年 10 月</span>
+						</div>
+						<div class="mb-3">於邊境數位科技主要以網站製作為主，前期使用 C# asp.net 語言開發網站專案，後期因專職協助媽媽經網站平台的開發，轉以 PHP 為主要網站開發語言；因為大學研究所有開發 APP 相關的經驗，所以於公司亦參與 Android 與 iOS 的 APP 專案開發、維護。</div>
+						<button class="project-toggle" onclick="toggleProject(this)">
+							<span>查看詳細資訊</span>
+							<i class="fas fa-chevron-down"></i>
+						</button>
+						<div class="project-links project-content">
+							<ul class="list-unstyled">
+								<li>邊境數位科技</li>
+								<ul>
+									<li>維護、修改&nbsp;<a href="http://www.hyundai-motor.com.tw/" target="_blank" rel="nofollow noopener" data-linkz-ai="">現代汽車臺灣官網</a></li>
+									<li>協助製作、維護 現代汽車車主APP (<a href="https://play.google.com/store/apps/details?id=com.nanyang.hyundai&amp;hl=zh_TW" target="_blank" rel="nofollow noopener" data-linkz-ai="">Android</a>、<a href="https://itunes.apple.com/tw/app/hyundai-hao-xing/id768630762?mt=8" target="_blank" rel="nofollow noopener" data-linkz-ai="">iOS</a>)</li>
+									<li>維護 SK-II iOS APP （已下架）</li>
+									<li>執行製作、維護 各式活動網站、APP</li>
+								</ul>
+								<li>經遠科技股份有限公司</li>
+								<ul>
+									<li>協助製作、維護&nbsp;<a href="http://mamaclub.com/" target="_blank" rel="nofollow noopener" data-linkz-ai="">媽媽經&nbsp;</a>網站、廣告埋設\調整、系統建置</li>
+									<li>維護、修改媽媽經 APP (<a href="https://play.google.com/store/apps/details?id=com.mamaclub.mamaclubapp&amp;hl=zh_TW" target="_blank" rel="nofollow noopener" data-linkz-ai="">Android</a>、<a href="https://itunes.apple.com/tw/app/ma-ma-jing/id869283911?l=zh&amp;mt=8" target="_blank" rel="nofollow noopener" data-linkz-ai="">iOS</a>)</li>
+								</ul>
+							</ul>
+						</div>
+					</div>
+
+					<!-- SOHO項目 -->
+					<div class="project-card">
+						<div class="mb-3">
+							<h3 class="project-title">
+								<b>SOHO</b>
+							</h3>
+							<span class="project-date">2016 年 10月 - 2017 年 2 月</span>
+						</div>
+						<div class="mb-3">於邊境數位科技的研發替代役退伍之後，在家接案工作，主要協助企業建制官網與廣告活動網站。</div>
+						<button class="project-toggle" onclick="toggleProject(this)">
+							<span>查看詳細資訊</span>
+							<i class="fas fa-chevron-down"></i>
+						</button>
+						<div class="project-links project-content">
+                <ul class="list-unstyled">
+                  <li>
+                    <span >【官網】</span>
+                    <a
+                      href="http://www.torsasystem.com/"
+                      title="TOSA 官方網站"
+                      target="_blank"
+                      "
+                      rel="nofollow noopener"
+                      data-enable-grammarly="false"
+                    >
+                      TOSA 官方網站
+                    </a>
+                    <br />
+                  </li>
+                  <ul>
+                    <li>執行 後台製作、前台畫面套用，前端功能修改</li>
+                  </ul>
+                  <li>
+                    <span >【活動網站】</span>
+                    <a
+                      href="http://barrierfree.eden.org.tw/"
+                      title="伊甸基金會 - 無障礙生活計畫 活動網站"
+                      target="_blank"
+                      
+                      rel="nofollow noopener"
+                      data-enable-grammarly="false"
+                    >
+                      伊甸基金會 - 無障礙生活計畫 活動網站
+                    </a>
+                    <br />
+                  </li>
+                  <ul>
+                    <li>執行 網站後台製作，前端功能製作、前台畫面套用</li>
+                  </ul>
+                  <li>
+                    【官網】
+                    <a
+                      href="http://www.swiftletcity.com/"
+                      title="燕芝都 官方網站"
+                      target="_blank"
+                      rel="nofollow noopener"
+                      data-enable-grammarly="false"
+                    >
+                      燕芝都 官方網站（已下架）
+                    </a>
+                  </li>
+                  <ul>
+                    <li>執行 功能製作、協助網站上架</li>
+                  </ul>
+                  <li>
+                    【官網】
+                    <a
+                      href="http://sunests.com/"
+                      title="真宴坊 官方網站"
+                      target="_blank"
+                      rel="nofollow noopener"
+                      data-enable-grammarly="false"
+                    >
+                      真宴坊 官方網站
+                    </a>
+                  </li>
+                  <ul>
+                    <li>執行 功能製作、協助網站上架</li>
+                  </ul>
+                  <li>
+                    【官網】
+                    <a
+                      href="http://www.fhbs.com.tw"
+                      title="復興廣播電台官網"
+                      target="_blank"
+                      rel="nofollow noopener"
+                      data-enable-grammarly="false"
+                    >
+                      復興廣播電台官網
+                    </a>
+                  </li>
+                  <ul>
+                    <li>執行 前台畫面套用、前端功能實作、後端功能修復/調整</li>
+                  </ul>
+                  <li>
+                    <span >【官網】</span>
+                    <a
+                      href="http://www.medinova.com.tw/"
+                      title="Medinova - 喜療瘀 | 喜能復"
+                      target="_blank"
+                      
+                      rel="nofollow noopener"
+                      data-enable-grammarly="false"
+                    >
+                      Medinova - 喜療瘀 | 喜能復
+                    </a>
+                    &nbsp;官方
+                    <span >網站</span>
+                    <br />
+                  </li>
+                  <ul>
+                    <li>執行 功能製作、協助網站上架</li>
+                  </ul>
+                  <li>
+                    【官網】
+                    <a
+                      href="http://www.revedoux.com.tw/Shop/"
+                      title="ReveDoux 官方網站"
+                      target="_blank"
+                      rel="nofollow noopener"
+                      data-enable-grammarly="false"
+                    >
+                      ReveDoux 官方網站
+                    </a>
+                  </li>
+                  <ul>
+                    <li>協助前端功能修改、靜態檔案伺服器建置</li>
+                    <li>靜態檔案伺服器 - 大流量解決方案</li>
+                  </ul>
+                  <li>【系統平台】VNU-CSIE-大腦（物流決策系統前段平台）</li>
+                  <ul>
+                    <li>執行 網站、SQL 邏輯套用、畫面與前端功能製作</li>
+                  </ul>
+                  <li>
+                    【官網】
+                    <a
+                      href="http://www.gwall.com.tw/"
+                      target="_blank"
+                      rel="nofollow noopener"
+                      data-enable-grammarly="false"
+                    >
+                      Gwall 巨幄室內裝修設計 官方網站
+                    </a>
+                    <br />
+                  </li>
+                  <ul>
+                    <li>協助 功能製作、網站改版</li>
+                  </ul>
+                  <li>
+                    【官網】
+                    <a
+                      href="http://www.twyixing.com/"
+                      target="_blank"
+                      rel="nofollow noopener"
+                      data-enable-grammarly="false"
+                    >
+                      意芯實業有限公司 官方網站
+                    </a>
+                    <br />
+                  </li>
+                  <ul>
+                    <li>執行 網站製作、網站上架</li>
+                  </ul>
+                  <li>
+                    【活動網站】太子信義 建案網站
+                    <br />
+                  </li>
+                  <ul>
+                    <li>執行 網站製作、協助上架</li>
+                  </ul>
+                </ul>
+                
+							</div>
+					</div>
+
+					<!-- 網鈺數位項目 -->
+					<div class="project-card">
+						<div class="mb-3">
+							<h3 class="project-title">
+								<b>網鈺數位</b>
+							</h3>
+							<span class="project-date">2017 年 2月 - 2017 年 10 月</span>
+						</div>
+						<div class="mb-3">在網鈺數位擔任iOS工程師職位，負責以 Swift / Objective-c 開發APP。</div>
+						<button class="project-toggle" onclick="toggleProject(this)">
+							<span>查看詳細資訊</span>
+							<i class="fas fa-chevron-down"></i>
+						</button>
+						<div class="project-links project-content">
+							<ul class="list-unstyled">
+									<li>
+										<a
+											href="https://itunes.apple.com/us/app/%E5%8D%A1%E6%8F%90%E8%AB%BE%E8%BF%BD%E6%9B%B8%E8%B6%A3/id1225128445?l=zh&amp;ls=1&amp;mt=8&amp;utm_source=apple%20qr%20code&amp;utm_medium=%E5%B0%8F%E8%AA%AAAPP%E5%AE%A3%E5%82%B3%E6%9B%9D%E5%85%89&amp;utm_campaign=20170619%E5%B0%8F%E8%AA%AAAPP%E5%AE%A3%E5%82%B3%E6%9B%9D%E5%85%89&amp;utm_term=%E5%B0%8F%E8%AA%AAapp&amp;utm_content=%E3%80%8A%E5%8D%A1%E6%8F%90%E8%AB%BE%E8%AB%96%E5%A3%87%E3%80%8B%E5%8D%A1%E6%8F%90%E8%AB%BE%E5%B0%8F%E8%AA%AA%E8%B6%A3APP%EF%BC%81%E7%B6%81%E5%AE%9A%E6%B4%BB%E5%8B%95"
+											target="_blank"
+											rel="nofollow noopener"
+											data-enable-grammarly="false"
+										>
+											卡提諾追書趣APP iOS版本
+										</a>
+									</li>
+									<ul>
+										<li>參與執行 iOS 版本 APP 開發、維護</li>
+									</ul>
+									<li>
+										<a
+											href="https://itunes.apple.com/app/id1249253026?&amp;"
+											target="_blank"
+											rel="nofollow noopener"
+											data-enable-grammarly="false"
+										>
+											卡提諾狂新聞APP&nbsp;
+										</a>
+										&nbsp;iOS
+									</li>
+									<ul>
+										<li>
+											參與執行 iOS 版本 APP 開發、維護
+											<br />
+										</li>
+									</ul>
+									<li>
+										<a
+											href="https://play.google.com/store/apps/details?id=com.dongtw.www"
+											target="_blank"
+											rel="nofollow noopener"
+											data-enable-grammarly="false"
+										>
+											動網APP
+										</a>
+										&nbsp;Android
+									</li>
+									<ul>
+										<li>參與執行 Android 版 本APP 開發、維護</li>
+									</ul>
+								</ul>
+							</div>
+							<div>
+								<b><br /></b>
+							</div>
+						</div>
+					</div>
+
+					<!-- 派瑞數位項目 -->
+					<div class="project-card">
+						<div class="mb-3">
+							<h3 class="project-title">
+								<b>派瑞數位</b>
+							</h3>
+							<span class="project-date">2017 年 10月 - 2018 年 5 月</span>
+						</div>
+						<div class="mb-3">
+							派瑞數位負責技術面的實作與規劃，應用 python、php 與 原生APP技術實作產品。
+						</div>
+						<button class="project-toggle" onclick="toggleProject(this)">
+							<span>查看詳細資訊</span>
+							<i class="fas fa-chevron-down"></i>
+						</button>
+						<div class="project-links project-content">
+							<ul class="list-unstyled">
+								<li>維護動網&nbsp;<a href="https://play.google.com/store/apps/details?id=com.dongtw.www&amp;hl=zh_TW" target="_blank" rel="nofollow noopener" data-linkz-ai="">Android</a> \ <a href="https://itunes.apple.com/tw/app/%E5%8B%95%E7%B6%B2/id1291312141?mt=8" target="_blank" rel="nofollow noopener" data-linkz-ai="">iOS</a> APP 與 API</li>
+								<li>維護&nbsp;<a href="http://www.dongtw.com/" target="_blank" rel="nofollow noopener" data-linkz-ai="">動網網站</a></li>
+								<li>維護 卡提諾廚房 <a href="https://r.cooky.tw/" target="_blank" rel="nofollow noopener" data-linkz-ai="">COOKY 網站</a></li>
+								<li>協助製作 電商平台（COOKY LIFE）與其他技術支援</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- SOHO / 伍壹柒數位項目 -->
+					<div class="project-card">
+						<div class="mb-3">
+							<h3 class="project-title">
+								<b>SOHO / 伍壹柒數位</b>
+							</h3>
+							<span class="project-date">2018 年 5 月 - 至今（2022 年 9 月起成立伍壹柒數位科技）</span>
+						</div>
+						<div class="mb-3">於派瑞數位離開後，在家接案工作，嘗試開發自有產品與外包案件。
+              <b class="small text-muted d-block mt-1">
+                【參與製作作品截圖請
+                <a
+                  href="https://www.dropbox.com/sh/6nz9ils1q0eg8pe/AABPm_Zl3YZk36BVTff9rpDga?dl=0"
+                  target="_blank"
+                  rel="nofollow noopener"
+                  data-linkz-ai=""
+                >
+                  參考這裡
+                </a>
+                】
+              </b>
+            </div>
+						<div class="project-links">
+							<div><b>官網部分</b></div>
+							<button class="project-toggle" onclick="toggleProject(this)">
+								<span>查看詳細資訊</span>
+								<i class="fas fa-chevron-down"></i>
+							</button>
+							<div class="project-content">
+								<ul  class="list-unstyled">
+									<li>【官網】<a href="http://innovate-taiwan.com.tw/" target="_blank" rel="nofollow noopener" data-linkz-ai="">翊珞濰&nbsp;innovate 頭皮養護</a>&nbsp;官方網站</li>
+									<ul style="font-weight: 400;">
+										<li>協助網站改版，實現新功能</li>
+									</ul>
+									<li>【官網】<a href="http://www.ywca.org.tw/" target="_blank" rel="nofollow noopener" data-linkz-ai="">YWCA 中華民國基督教女青年會協會</a>&nbsp;官方網站</li>
+									<ul style="font-weight: 400;">
+										<li>協助網站改版，實現新功能</li>
+									</ul>
+									<li>【官網】<a href="http://cta.com.tw/" target="_blank" rel="nofollow noopener" data-linkz-ai="">CTA幣策會</a>&nbsp;官方網站</li>
+									<ul style="font-weight: 400;">
+										<li>協助實現需求功能</li>
+									</ul>
+									<li>【官網】<a href="https://517digit.com/" target="_blank" rel="nofollow noopener" data-linkz-ai="">伍壹柒數位工作室</a>&nbsp;官網</li>
+									<ul style="font-weight: 400;">
+										<li>規劃與實作前台內容、樣式</li>
+									</ul>
+									<li>【官網】西井科技&nbsp;<a href="https://westwell-lab.com/" target="_blank" rel="nofollow noopener" data-linkz-ai="">簡中</a>、<a href="https://en.westwell-lab.com/" target="_blank" rel="nofollow noopener" data-linkz-ai="">英文</a>&nbsp;官方網站</li>
+									<ul>
+										<li>協助規劃、實作後端 API</li>
+										<li>協助實作後台設定、上搞、管理員帳號登入等功能</li>
+									</ul>
+								</ul>
+							</div>
+							<div><b>活動網站部分</b></div>
+							<button class="project-toggle" onclick="toggleProject(this)">
+								<span>查看詳細資訊</span>
+								<i class="fas fa-chevron-down"></i>
+							</button>
+							<div class="project-content">
+								<ul  class="list-unstyled">
+									<li>【活動網站】【已結束】<a href="http://tpenoc-newyear.69939.uk/" target="_blank" rel="nofollow noopener" data-linkz-ai="">中華奧林匹克委員會 為您送上聖誕祝福</a>&nbsp;活動網站</li>
+									<ul>
+										<li>前後端製作、上架</li>
+										<li>使用純 HTML/Js/css 切版、製作</li>
+									</ul>
+									<li>【活動網站】【已結束】<a href="http://cross-straitstory.com/" target="_blank" rel="nofollow noopener" data-linkz-ai="">遷台歷史記憶庫</a>&nbsp;活動網站</li>
+									<ul>
+										<li>協助處理後台、 前後端分離 API 實現</li>
+										<li>使用 PHP CI3 框架實現後台/後端功能</li>
+									</ul>
+									<li>【活動網站】【已結束】2020 Adidas Line OA 邀請 | 2020 Adidas Line OA Invitation</li>
+									<ul>
+										<li>協助實現 Line Bot 串接 Message API&nbsp; 功能與後端系統架設</li>
+										<li>使用 PHP 串接 Line 實現 API 與後台功能。</li>
+									</ul>
+									<li>【活動網站】【已結束】2020&nbsp;Adidas Line OA 農曆新年活動 | 新春紅包加點料</li>
+									<ul>
+										<li>協助實現 Line Bot 串接 Message API 功能與後端系統架設</li>
+										<li>使用 PHP 串接 Line 實現 API 與後台功能。</li>
+									</ul>
+									<li>【活動網站】【已結束】2021 享鴨 Line OA 母親節活動 | 只享好好陪你</li>
+									<ul>
+										<li>協助實現 Line Bot 串接 Message API 功能與後端系統架設</li>
+										<li>使用 PHP 串接 Line 實現 API 與後台功能。</li>
+									</ul>
+									<li>【活動網站】【已結束】 2021 3M Line OA 活動 | 不思議居家保衛戰</li>
+									<ul>
+										<li>協助實現 Line Bot 串接 Message API 功能與後端系統架設</li>
+										<li>使用 PHP 串接 Line 實現 API 與後台功能。</li>
+									</ul>
+									<li>【活動網站】【已結束】&nbsp;<a href="http://xindianriver.com/" target="_blank" rel="nofollow noopener" data-linkz-ai="">新店溪遊記</a>&nbsp;網站</li>
+									<ul>
+										<li>協助網站架設、後端功能實現、前端功能實現</li>
+										<li>透過 Wordpress 套版，搭配美術與程式調整實現網站內容</li>
+									</ul>
+									<li>【活動網站】【已結束】莱伯妮 La Prairie 線上兌換</li>
+									<ul>
+										<li>協助規劃、實作實現後端 API 功能、串接手機驗證等第三方功能</li>
+										<li>使用 PHP 串接 Line 實現 API 與後台功能</li>
+									</ul>
+									<li>【活動網站】【已結束】愛馬仕 HERMESFIT 活動</li>
+									<ul>
+										<li>協助規劃、實作後端 API 、串接手機驗證等第三方功能</li>
+										<li>協助實作後台設定、上搞、管理員帳號登入等邏輯</li>
+										<li>使用 PHP 串接 Line 實現 API 與後台功能</li>
+									</ul>
+									<li>【活動網站】【已結束】中華民國童軍第12次全國大露營 - 活動組<a href="https://github.com/lazyjerry/scout12-20240711-20240715" target="_blank" rel="nofollow noopener" data-linkz-ai="">雲端簽到系統</a></li>
+									<ul>
+										<li>實作前後端， vue3 + vite \ PHP \ Cloudflare Workers and KV</li>
+										<li>實現大流量快取的簽到架構，目標 8k 同上，實際約 4k 同上使用人次</li>
+										<li>活動期間監控與維護，並提出優化方向列點並且開源，參考&nbsp;<a href="https://github.com/lazyjerry/scout12-20240711-20240715" target="_blank" rel="nofollow noopener" data-linkz-ai="">Github Project</a>&nbsp;/&nbsp;<a href="https://hipster.crazyjerry.studio/post/%e5%85%a8-12-%e6%b4%bb%e5%8b%95%e7%b4%80%e9%8c%84/" target="_blank" rel="nofollow noopener" data-linkz-ai="">Blog</a></li>
+									</ul>
+								</ul>
+							</div>
+							<div><b>系統平台部分</b></div>
+							<button class="project-toggle expanded" onclick="toggleProject(this)">
+								<span>收起詳細資訊</span>
+								<i class="fas fa-chevron-down"></i>
+							</button>
+							<div class="project-content expanded">
+								<ul  class="list-unstyled">
+									<li>【系統平台】明維科技 - 環境偵測系統 後端系統與 Android APP 封裝</li>
+									<ul>
+										<li>協助實現系統與感測器資料拋接與顯示</li>
+										<li>協助實現信件警報系統</li>
+										<li>協助實現 Android APP 網頁加殼</li>
+									</ul>
+									<li>【系統平台】築筠文創 - <a href="https://lin.ee/hnaEdsG" target="_blank" rel="nofollow noopener" data-linkz-ai="">時間旅行遊戲 Line@ 機器人系統</a>&nbsp;</li>
+									<ul>
+										<li>&nbsp;協助實現 Line Bot 串接 Message API&nbsp;</li>
+										<li>&nbsp;協助實現時間旅行遊戲邏輯</li>
+									</ul>
+									<li>【系統平台】【已結束】<a href="https://donhonclub.com/analytics/" target="_blank" rel="nofollow noopener" data-linkz-ai="">當紅俱樂部 - 當紅榜</a>、當紅俱樂部 - 當紅TV&nbsp;、<a href="https://www.facebook.com/donhonclubcom/?modal=admin_todo_tour" target="_blank" rel="nofollow noopener" data-linkz-ai="">粉絲團</a>&nbsp;等相關產品 [<a href="https://www.dropbox.com/scl/fo/lfardh2qu29jguf2v2ven/AKiyt7N4iaEdm2IoNDSumSo?rlkey=6sx5g9b39grmhqlhgbq4bdy2v&amp;st=w7wvdnzt&amp;dl=0" target="_blank" rel="nofollow noopener" data-linkz-ai="">網站截圖</a>]</li>
+									<ul>
+										<li>網站設計、系統設計\實作、功能設計\實作</li>
+										<li>PHP +套版+API 實現 KOL 訂閱觀看等指標追蹤</li>
+										<li>Python 實現爬蟲與串 API 取得資料與分詞搜尋</li>
+										<li>後期 API 緊縮，改以 PHP/CI4 實現 KOL 與政治新聞爬蟲</li>
+										<li>PHP 異步實現 新聞利用 AI 服務產生摘要</li>
+										<li>PHP + 社群 API 實現發布新聞轉貼至社群平台</li>
+									</ul>
+									<li>【系統平台】<a href="https://www.crazybid.tw/" target="_blank" rel="nofollow noopener" data-linkz-ai="">瘋標電商平台</a>&nbsp;FB下單購物系統</li>
+									<ul>
+										<li>協助處理其中電商網站技術後端、管理端</li>
+										<li>協助規劃電商平台技術架構、技術協調</li>
+										<li>協助調整為電商平台網站</li>
+									</ul>
+									<li>【系統平台】<a href="https://www.gomax-electronics.com.tw/" target="_blank" rel="nofollow noopener" data-linkz-ai="">啟發電子</a>&nbsp;AVP iOS DEMO APP</li>
+									<ul>
+										<li>協助溝通、規劃 iOS APP 製作</li>
+									</ul>
+									<li>【系統平台】築筠文創 - <a href="https://lin.ee/cxgj5fh" target="_blank" rel="nofollow noopener" data-linkz-ai="">時間旅行遊戲 Line 機器人系統 v2</a></li>
+									<ul>
+										<li>&nbsp;協助實現 Line Bot 串接 Message API 協助實現時間旅行遊戲邏輯</li>
+									</ul>
+									<li>【系統平台】【已結束】國外遊戲網站與內容網站</li>
+									<ul>
+										<li>協助修改與維護網站、架設 Wordpress 網站</li>
+										<li>處理修改 ThinkPHP、Laravel 框架的網站功能</li>
+										<li>協助研究與探索現有 PHP 系統平台功能、Mobile App 功能</li>
+									</ul>
+									<li>【系統平台】【已結束】AZ 阿斯利康-<a href="https://www.dropbox.com/scl/fi/lvaxb86apgvcb6bt2uqfm/ZnzhiAD-2022.Q2.pdf?rlkey=eu1dlv47dmqxfeosfa0bcfw29&amp;st=wpmqqm4c&amp;dl=0" target="_blank" rel="nofollow noopener" data-linkz-ai="">移動資訊中心解決方案</a></li>
+									<ul>
+										<li>協助規劃、實作後台、後端 API</li>
+										<li>使用 PHP 實現前後端分離與後台功能</li>
+										<li>維護後端語系統運作</li>
+									</ul>
+									<li>【系統平台】【已結束】<a href="https://hunt.thejob.com.tw/" target="_blank" rel="nofollow noopener" data-linkz-ai="">The Job</a> 網站</li>
+									<ul>
+										<li>協助<a href="https://hunt.thejob.com.tw/" target="_blank" rel="nofollow noopener" data-linkz-ai="">求職求才系統</a>規劃與實作前後台功能</li>
+										<li>協助維護<a href="https://learn.thejob.com.tw/" target="_blank" rel="nofollow noopener" data-linkz-ai="">學習成長系統</a>前後台功能</li>
+										<li>使用 Wordpress 修改實現</li>
+									</ul>
+									<li>【系統平台】【已結束】荒野保護協會-<a href="https://ecopark.sow.org.tw/" target="_blank" rel="nofollow noopener" data-linkz-ai="">公園生態化</a>網站</li>
+									<ul>
+										<li>協助規劃實作前後台功能</li>
+										<li>協助規劃與實作荒野資料平台後端與後台功能、串接資料</li>
+										<li>使用 Wordpress 實現網站頁面</li>
+										<li>PHP 實現資料平台後台功能、後端功能串接</li>
+									</ul>
+									<li>【系統平台】【已結束】實體裝置整合 - TopGolf 冰峰對決高爾夫球遊戲系統</li>
+									<ul>
+										<li>協助系統規劃與後端製作</li>
+										<li>使用 PHP Codigniter 4 框架開發前後端分離的前台語後台遊戲系統</li>
+									</ul>
+									<li>【系統平台】測驗出版股份有限公司 - <a href="https://test.pactest.com" target="_blank" rel="nofollow noopener" data-linkz-ai="">心理評測工具</a> 與 <a href="https://www.chinancda.org/" target="_blank" rel="nofollow noopener" data-linkz-ai="">NCDA</a> 平台</li>
+									<ul>
+										<li>&nbsp;提供維護、諮詢與修改服務</li>
+									</ul>
+									<li>【系統平台】測驗出版股份有限公司 -&nbsp;&nbsp;<a href="https://newtest.pactest.com/" target="_blank" rel="nofollow noopener" data-linkz-ai="">心理評測工具新站</a></li>
+									<ul>
+										<li>協助後端功能規劃、建立、維護。</li>
+										<li>與企劃、美術和前端合作，實作第一版本上架。</li>
+									</ul>
+									<li>【系統平台】Line 平台 -&nbsp;鑫喜悅 SunCheer - 遊戲平台</li>
+									<ul>
+										<li>協助後端程式邏輯、資料庫規劃與實作</li>
+										<li>協助後台規劃實作與架設網站服務</li>
+									</ul>
+									<li>AI Coding For Side Projects 大多使用 Hono for Typescript 在 Cloudflare 上實現，主要與 AI 工具協作實現前後端功能。</li>
+									<ul>
+										<li>Chrome 擴充套件，<a href="https://github.com/lazyjerry/My-Notes-Extension" target="_blank" rel="nofollow noopener" data-linkz-ai="">社群標籤</a>&nbsp;|&nbsp;<a href="https://github.com/lazyjerry/My-Notes-Extension-Remote" target="_blank" rel="nofollow noopener" data-linkz-ai="">遠端儲存服務</a>。實作社群帳號標籤需求</li>
+										<li>Sublime 外掛，Sublime Text in <a href="https://github.com/lazyjerry/sublime-text-chatgpt" target="_blank" rel="nofollow noopener" data-linkz-ai="">ChatGPT</a>,&nbsp;<a href="https://github.com/lazyjerry/sublime-text-claude" target="_blank" rel="nofollow noopener" data-linkz-ai="">Claude</a>&nbsp;。實作 sublime 的 AI&nbsp; inline 生成需求（無自動填充）</li>
+										<li>報價單產生器，<a href="https://github.com/lazyjerry/estimate-generator" target="_blank" rel="nofollow noopener" data-linkz-ai="">連結</a></li>
+										<li>合約 PDF 合併工具，<a href="https://github.com/lazyjerry/pdf-assembler" target="_blank" rel="nofollow noopener" data-linkz-ai="">連結</a></li>
+										<li>會議記錄產生器，<a href="https://github.com/lazyjerry/take-the-minutes" target="_blank" rel="nofollow noopener" data-linkz-ai="">連結</a></li>
+										<li>勞務報酬單產生器，<a href="https://github.com/lazyjerry/taiwan-labor-receipt" target="_blank" rel="nofollow noopener" data-linkz-ai="">連結</a></li>
+										<li>SEO 檢查工具，<a href="https://github.com/lazyjerry/seo-preview-checker" target="_blank" rel="nofollow noopener" data-linkz-ai="">連結</a></li>
+										<li>瀏覽器尺寸檢測器，<a href="https://github.com/lazyjerry/screen-size-detector" target="_blank" rel="nofollow noopener" data-linkz-ai="">連結</a></li>
+										<li>工作日誌系統，<a href="https://github.com/lazyjerry/work-logs" target="_blank" rel="nofollow noopener" data-linkz-ai="">連結</a>。實作 Basic Auth 於 Cloudflare Worker&nbsp;實現。</li>
+										<li>塔羅牌占卜網頁應用，<a href="https://github.com/lazyjerry/tarot-question-prompter" target="_blank" rel="nofollow noopener" data-linkz-ai="">連結</a>（未串接 AI 解牌）</li>
+										<li>厭世電子雞遊戲系統，<a href="https://github.com/lazyjerry/tamagotchi" target="_blank" rel="nofollow noopener" data-linkz-ai="">連結</a>。實作&nbsp;Web Authentication 功能於 Cloudflare Worker&nbsp;實現。</li>
+										<li>樂透小秘書，<a href="https://github.com/lazyjerry/chat-secretary" target="_blank" rel="nofollow noopener" data-linkz-ai="">連結</a>。實作 Telegram Bot 回覆系統，與 Cloudflare RAG/AI/Worker 整合實現樂透統計回覆。</li>
+										<li>老媽整點叫你機器人，<a href="https://github.com/lazyjerry/chat-secretary" target="_blank" rel="nofollow noopener" data-linkz-ai="">連結</a>。實作 Telegram Bot 提醒工具，整合&nbsp;AI 服務實現智慧化的整點通知提醒。</li>
+										<li>飲食紀錄工具，<a href="https://github.com/lazyjerry/diet-record" target="_blank" rel="nofollow noopener" data-linkz-ai="">連結</a>。實作規劃六大營養素紀錄，儀式感拉滿的個人紀錄工具。功能於 Cloudflare Worker 實現。</li>
+										<li>Telegram 發文機器人，<a href="https://github.com/lazyjerry/telegram-news" target="_blank" rel="nofollow noopener" data-linkz-ai="">連結</a>。Telegram 平台工具，實現透過 API 接收新聞內容，定時發送內容給訂閱用戶。</li>
+										<li>嘗試每週更新一期的 AI 科技服務週報，<a href="https://lazyjerry.github.io/weekly-report/" target="_blank" rel="nofollow noopener" data-linkz-ai="">連結</a>。也包含其他不定期專題報告，<a href="https://lazyjerry.github.io/" target="_blank" rel="nofollow noopener" data-linkz-ai="">總覽連結</a>。</li>
+										<li>嘗試將藝術體驗心得製作成 Podcast 與一些藝術創作測試，<a href="https://www.youtube.com/@%E6%B8%AC%E8%A9%A6%E4%B8%80%E4%B8%8B-b612" target="_blank" rel="nofollow noopener" data-linkz-ai="">連結</a>。</li>
+									</ul>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        <!-- END -->
+			</div>
+		</div>
+
+		<!-- Bootstrap JS -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+		
+		<!-- Custom JavaScript -->
+		<script>
+			function toggleProject(button) {
+				const content = button.nextElementSibling;
+				const isExpanded = content.classList.contains('expanded');
+				const span = button.querySelector('span');
+				
+				if (isExpanded) {
+					// 收起時設定為0高度
+					content.style.maxHeight = '0';
+					content.classList.remove('expanded');
+					button.classList.remove('expanded');
+					span.textContent = '查看詳細資訊';
+				} else {
+					// 展開時計算實際內容高度
+					content.style.maxHeight = content.scrollHeight + 'px';
+					content.classList.add('expanded');
+					button.classList.add('expanded');
+					span.textContent = '收起詳細資訊';
+				}
+			}
+			
+			// 頁面載入完成後，為預設展開的項目設定正確高度
+			document.addEventListener('DOMContentLoaded', function() {
+				const expandedContents = document.querySelectorAll('.project-content.expanded');
+				expandedContents.forEach(content => {
+					content.style.maxHeight = content.scrollHeight + 'px';
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -72,53 +72,6 @@
 				background: linear-gradient(45deg, #007bff, #0056b3);
 				border-radius: 2px;
 			}
-			.skill-item {
-				background: linear-gradient(45deg, #f8f9fa, #e9ecef);
-				border-radius: 25px;
-				padding: 8px 16px;
-				margin: 4px 8px 4px 0;
-				display: inline-block;
-				border: 1px solid rgba(0, 123, 255, 0.1);
-				transition: all 0.3s ease;
-			}
-			.skill-item:hover {
-				background: linear-gradient(45deg, #007bff, #0056b3);
-				color: white;
-				transform: translateY(-2px);
-				box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
-			}
-			.skill-card {
-				background: rgba(255, 255, 255, 0.9);
-				border-radius: 15px;
-				padding: 16px;
-				border: 1px solid rgba(0, 123, 255, 0.1);
-				transition: all 0.3s ease;
-				box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-				backdrop-filter: blur(5px);
-			}
-			.skill-card:hover {
-				transform: translateY(-3px);
-				box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-				border-color: rgba(0, 123, 255, 0.3);
-			}
-			.skill-card-title {
-				color: #2c3e50;
-				margin-bottom: 12px;
-				font-weight: 600;
-				border-bottom: 2px solid #007bff;
-				padding-bottom: 6px;
-				font-size: 0.9rem;
-			}
-			.skill-items {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 6px;
-			}
-			.skill-card .skill-item {
-				font-size: 0.8rem;
-				padding: 6px 12px;
-				margin: 2px 4px 2px 0;
-			}
 			.project-card {
 				background: rgba(255, 255, 255, 0.9);
 				border-radius: 15px;
@@ -231,13 +184,14 @@
 	<body>
 		<div class="container">
 			<div class="portfolio-container">
-				<!-- 頁面標題區域 -->
+				<!-- ===== 頁面標題區域 ===== -->
 				<div class="text-center mb-5">
 					<h1 class="display-4 fw-bold text-primary mb-2">林書賢 - 專案作品集</h1>
 					<p class="lead text-muted">軟體開發工程師 | 全端開發 | 專案管理</p>
 					<div class="d-inline-block bg-primary" style="height: 3px; width: 60px; border-radius: 2px;"></div>
 				</div>
-				
+            
+				<!-- ===== 個人簡介與亮點作品區 ===== -->
 				<div class="row">
 					<div
 						class="col-sm-12"
@@ -247,86 +201,47 @@
 							<b>林書賢</b>
 							<small class="text-muted">Jerry Lin</small>
 						</h1>
-						<p class="lead">
-							目前掌握與常用的技能、工具以及服務：
+						<p class="lead small">
+							最新完整版請以 <a href="https://www.cake.me/shu-hsien-lin" target="_blank" rel="nofollow noopener">https://www.cake.me/shu-hsien-lin</a>為主。
 						</p>
 
-						<div class="skills-container mb-4">
-							<div class="row g-3">
-								<div class="col-lg-4 col-md-6">
-									<div class="skill-card h-100">
-										<h6 class="skill-card-title"><i class="fas fa-server text-primary me-2"></i>系統與基礎設施</h6>
-										<div class="skill-items">
-											<span class="skill-item">Debian</span>
-											<span class="skill-item">CentOS 7</span>
-											<span class="skill-item">Nginx</span>
-											<span class="skill-item">MariaDB</span>
-											<span class="skill-item">Bootstrap</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-6">
-									<div class="skill-card h-100">
-										<h6 class="skill-card-title"><i class="fab fa-php text-primary me-2"></i>PHP 開發</h6>
-										<div class="skill-items">
-											<span class="skill-item">WordPress</span>
-											<span class="skill-item">CodeIgniter 3, 4</span>
-											<span class="skill-item">Laravel</span>
-											<span class="skill-item">ThinkPHP</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-6">
-									<div class="skill-card h-100">
-										<h6 class="skill-card-title"><i class="fab fa-python text-primary me-2"></i>Python 開發</h6>
-										<div class="skill-items">
-											<span class="skill-item">Flask</span>
-                      <span class="skill-item">爬蟲應用</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-6">
-									<div class="skill-card h-100">
-										<h6 class="skill-card-title"><i class="fas fa-mobile-alt text-primary me-2"></i>行動應用開發</h6>
-										<div class="skill-items">
-											<span class="skill-item">iOS - Swift</span>
-											<span class="skill-item">iOS - Objective-C</span>
-											<span class="skill-item">Android - Java</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-6">
-									<div class="skill-card h-100">
-										<h6 class="skill-card-title"><i class="fas fa-robot text-primary me-2"></i>AI 與現代開發</h6>
-										<div class="skill-items">
-											<span class="skill-item">TypeScript</span>
-											<span class="skill-item">Hono framework</span>
-											<span class="skill-item">Python</span>
-											<span class="skill-item">PHP</span>
-											<span class="skill-item">Bash</span>
-											<span class="skill-item">SQL</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-6">
-									<div class="skill-card h-100">
-										<h6 class="skill-card-title"><i class="fas fa-cloud text-primary me-2"></i>雲端服務</h6>
-										<div class="skill-items">
-											<span class="skill-item">Linode</span>
-											<span class="skill-item">Vultr</span>
-											<span class="skill-item">AWS</span>
-											<span class="skill-item">阿里雲</span>
-											<span class="skill-item">Azure</span>
-											<span class="skill-item">Cloudflare</span>
-										</div>
-									</div>
-								</div>
-							</div>
+						<!-- ===== 作品集亮點整理區 ===== -->
+						<div class="highlight-projects mb-4">
+							<h4 class="mb-3">作品集亮點整理</h4>
+							<ul class="list-unstyled">
+								<li class="mb-3">
+									<b>當紅俱樂部</b>｜<a href="./screenshot/當紅俱樂部/01.png" target="_blank" rel="nofollow noopener">[截圖 1]</a>
+									<a href="./screenshot/當紅俱樂部/02.png" target="_blank" rel="nofollow noopener">[截圖 2]</a><br>
+									這是一個自己想要製作的作品，最後收掉不過也是陪伴自己最久的作品，主要是想要找到未來會紅的 KOL。從訂閱數追蹤系統到網紅/政治人物新聞蒐集分析，不過邊做也是邊有其他產品發展出來。
+								</li>
+								<li class="mb-3">
+									<b>瘋標電商平台</b>｜<a href="./screenshot/瘋標電商平台/01.png" target="_blank" rel="nofollow noopener">[截圖 1]</a>
+									<a href="./screenshot/瘋標電商平台/02.png" target="_blank" rel="nofollow noopener">[截圖 2]</a><br>
+									這是一套與 nodejs 工程師合作的專案，實現直播 +1 購買，與商店購物車功能。
+								</li>
+								<li class="mb-3">
+									<b>童軍第12次全國大露營</b>｜<a href="https://github.com/lazyjerry/scout12-20240711-20240715" target="_blank" rel="nofollow noopener">[GitHub]</a> | <a href="./screenshot/童軍第12次全國大露營/01.png" target="_blank" rel="nofollow noopener">[截圖 1]</a>
+									<a href="./screenshot/童軍第12次全國大露營/02.png" target="_blank" rel="nofollow noopener">[截圖 2]</a><br>
+									這是一套實現高流量的活動類型作品：半小時內 7000-8000 人掃描 QR Code 登入 / 簽到系統，使用 Cloudflare 上面的技術實現緩存。目前開源放在 Github 上。
+									
+								</li>
+								<li class="mb-3">
+									<b>AZ 阿斯利康-移動資訊中心解決方案</b>｜<a href="./screenshot/ZnzhiAD - 移动资讯中心解决方案 2022.Q2.pdf" target="_blank" rel="nofollow noopener">[專案文件]</a><br>
+									這是一套用 PHP CI3 製作客製化的新聞發布平台，技術不難，不過在系統類型作品中，是時間和溝通成本花費比較高的一個專案。
+								</li>
+								<li class="mb-3">
+									<b>TopGolf 冰峰對決高爾夫球遊戲系統</b>｜<a href="./screenshot/TopGolf_冰峰對決高爾夫球遊戲系統/FireShot Capture 001 - TOPGOLF - front.d1m.camart.co.uk.png" target="_blank" rel="nofollow noopener">[截圖 1]</a>
+									<a href="./screenshot/TopGolf_冰峰對決高爾夫球遊戲系統/FireShot Capture 002 - 预约管理 - TOPGOLF - front.d1m.camart.co.uk.png" target="_blank" rel="nofollow noopener">[截圖 2]</a><br>
+									這是一套比較接近軟硬整合的作品，主要實現一套在中國大陸的遊戲系統，包含整個高爾夫球遊戲計算方式、遊戲硬體串接（Restful API）、前後台串接等。
+									
+								</li>
+							</ul>
 						</div>
+						<!-- ===== END 作品集亮點整理區 ===== -->
 					</div>
 				</div>
 
-				<!-- 專案與計畫區塊 -->
+				<!-- ===== 專案與計畫區塊 ===== -->
 				<div class="col-12 mt-5">
 					<div class="row">
 						<div class="col-12" data-enable-grammarly="false">
@@ -335,14 +250,14 @@
 							</h1>
 						</div>
 					</div>
-					
-					<!-- 中原大學項目 -->
+                
+					<!-- ===== 中原大學項目 ===== -->
 					<div class="project-card">
 						<div class="mb-3">
 							<h3 class="project-title">
 								<b>中原大學 電子系 通訊組</b>
 							</h3>
-							<span class="project-date">2011年 7 月 - 2013 年 7 月</span>
+							<span class="project-date">2011 年 7 月 - 2013 年 7 月</span>
 						</div>
 						<div class="mb-3">在兩年的研究所時期，專案主要以與研究室老師分配的專案項目為主：</div>
 						<button class="project-toggle" onclick="toggleProject(this)">

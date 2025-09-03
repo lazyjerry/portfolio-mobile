@@ -1,6 +1,3 @@
-body, .portfolio-container, .project-card, .lead, .section-title, .project-title, .project-date, .project-links, .project-content, ul, li, p, h1, h2, h3, h4, h5, h6 {
-	/* word-break: keep-all; */
-}
 body {
 	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 	font-family: "Helvetica Neue", "Helvetica", "Arial", "Microsoft JhengHei", sans-serif;

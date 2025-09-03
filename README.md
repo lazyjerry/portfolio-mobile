@@ -15,6 +15,19 @@
 - 互動式折疊區段，具備平滑的展開收合動畫
 - 中文字體優化，針對繁體中文排版調整
 - 零建置需求，單一 HTML 檔案即可部署
+- **AI Coding 實戰作品集**：涵蓋自動化文件產生、PDF 處理、SEO 分析、會議記錄、社群標籤管理等，並整合 Cloudflare Workers、Hono (TypeScript)、AI API、RAG 技術與多種 AI CLI 工具。
+
+### 代表性 AI Coding 專案
+
+- [Git 自動 Commit Message 工具](https://github.com/lazyjerry/git-auto-push)：一鍵自動化 Git add/commit/push，並可整合多種 AI CLI 工具自動生成語意化 commit message。
+- [報價單產生器](https://github.com/lazyjerry/estimate-generator)
+- [社群標籤 Chrome 擴充](https://github.com/lazyjerry/My-Notes-Extension)
+- [瀏覽器尺寸檢測器](https://github.com/lazyjerry/screen-size-detector)
+- [老媽整點叫你機器人](https://github.com/lazyjerry/telegram-reminder)
+- [飲食紀錄工具](https://github.com/lazyjerry/diet-record)
+- [勞務報酬單產生器](https://github.com/lazyjerry/taiwan-labor-receipt)
+
+更多專案請見 index.html 作品集區塊。
 
 ## 系統結構
 
